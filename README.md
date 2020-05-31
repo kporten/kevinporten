@@ -1,16 +1,16 @@
-# Template Gatsby
+# Kevin Porten
 
-![license](https://img.shields.io/github/license/kporten/template-gatsby)
+![license](https://img.shields.io/github/license/kporten/kevinporten)
 
-![tag](https://img.shields.io/github/v/tag/kporten/template-gatsby)
+![tag](https://img.shields.io/github/v/tag/kporten/kevinporten)
 
-![last-commit](https://img.shields.io/github/last-commit/kporten/template-gatsby)
+![last-commit](https://img.shields.io/github/last-commit/kporten/kevinporten)
 
 ![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)
 
-![ci](https://github.com/kporten/template-gatsby/workflows/CI/badge.svg?branch=master&event=push)
+![ci](https://github.com/kporten/kevinporten/workflows/CI/badge.svg?branch=master&event=push)
 
-Template for a website with Gatsby and TypeScript
+My personal homepage licensed under [The Unlicense](https://unlicense.org/). Feel free to copy and modify the code, but please don't use my name and picture in your copy :)
 
 ## Requirements
 
@@ -45,7 +45,7 @@ yarn test:ci # run jest tests in ci mode
 yarn e2e:ci # run cypress e2e tests in ci mode
 ```
 
-> This template contains a GitHub CI workflow that runs on push (except for tags) and pull request events.
+> This repository contains a GitHub CI workflow that runs on push (except for tags) and pull request events.
 
 ## Environment
 
@@ -69,3 +69,5 @@ yarn e2e:ci # run cypress e2e tests in ci mode
 
 - [Commitizen](http://commitizen.github.io/cz-cli/)
 - [Auto Changelog](https://github.com/CookPete/auto-changelog)
+
+> Based on https://github.com/kporten/template-gatsby

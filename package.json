@@ -1,10 +1,10 @@
 {
-  "name": "template-gatsby",
-  "version": "1.0.4",
+  "name": "kevinporten",
+  "version": "0.1.0",
   "private": false,
   "license": "Unlicense",
-  "description": "Template for a website with Gatsby and TypeScript",
-  "repository": "https://github.com/kporten/template-gatsby.git",
+  "description": "My personal homepage",
+  "repository": "https://github.com/kporten/kevinporten.git",
   "author": "Kevin Porten <hello@kevinporten.dev>",
   "scripts": {
     "start": "gatsby develop -H 0.0.0.0",
