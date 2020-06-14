@@ -2,7 +2,7 @@
   "name": "kevinporten",
   "version": "0.1.0",
   "private": false,
-  "license": "Unlicense",
+  "license": "MIT",
   "description": "My personal homepage",
   "repository": "https://github.com/kporten/kevinporten.git",
   "author": "Kevin Porten <hello@kevinporten.dev>",
