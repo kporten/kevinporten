@@ -3,7 +3,7 @@ import { useIntl, navigate } from 'gatsby-plugin-intl';
 
 const useContentfulPage = <N extends { node_locale?: string | null }>(
   allContentfulPageNodes: N[],
-) => {
+): N | undefined => {
   const { locale } = useIntl();
 
   const contentfulPage = allContentfulPageNodes.find((node) =>
