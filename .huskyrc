@@ -1,6 +1,6 @@
 {
   "hooks": {
-    "pre-commit": "yarn tsc:check && yarn lint",
+    "pre-commit": "yarn tsc:check && yarn lint && yarn run hint",
     "pre-push": "yarn test:ci",
     "commit-msg": "commitlint --env HUSKY_GIT_PARAMS"
   }
