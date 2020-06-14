@@ -1,16 +1,16 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import type { NotFoundQuery } from '../../types/graphql';
+import type { SkillsQuery } from '../../types/graphql';
 
 import useContentfulPage from '../hooks/useContentfulPage';
 
 import Layout from '../components/Layout';
 
-const GET_NOT_FOUND_CONTENTFUL_PAGE = graphql`
-  query NotFound {
+const GET_SKILLS_CONTENTFUL_PAGE = graphql`
+  query Skills {
     allContentfulPage(
-      filter: { contentful_id: { eq: "3sKYqBV9aHgNpcrJKPVQMe" } }
+      filter: { contentful_id: { eq: "KbsdcceAfRetyzCsoVEux" } }
     ) {
       nodes {
         title
@@ -20,9 +20,9 @@ const GET_NOT_FOUND_CONTENTFUL_PAGE = graphql`
   }
 `;
 
-const NotFound: React.FC = () => {
-  const { allContentfulPage } = useStaticQuery<NotFoundQuery>(
-    GET_NOT_FOUND_CONTENTFUL_PAGE,
+const Skills: React.FC = () => {
+  const { allContentfulPage } = useStaticQuery<SkillsQuery>(
+    GET_SKILLS_CONTENTFUL_PAGE,
   );
 
   const contentfulPage = useContentfulPage<typeof allContentfulPage.nodes[0]>(
@@ -36,4 +36,4 @@ const NotFound: React.FC = () => {
   );
 };
 
-export default NotFound;
+export default Skills;

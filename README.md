@@ -18,6 +18,10 @@ My personal homepage licensed under [The Unlicense](https://unlicense.org/). Fee
 
 ## Getting Started
 
+Copy the `.env.example` file and rename the copy to `.env.development`. Then change the variable values in the file.
+
+Now you can start with development...
+
 ```bash
 yarn install
 yarn start

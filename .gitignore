@@ -13,6 +13,10 @@
 # production
 /public
 
+# generated
+/types/graphql.ts
+
 # misc
 .DS_Store
 .env*
+.netlify
