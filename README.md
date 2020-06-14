@@ -10,7 +10,7 @@
 
 ![ci](https://github.com/kporten/kevinporten/workflows/CI/badge.svg?branch=master&event=push)
 
-My personal homepage licensed under [The Unlicense](https://unlicense.org/). Feel free to copy and modify the code, but please don't use my name and picture in your copy :)
+My personal homepage. Feel free to copy and modify the code, but please don't use my name and picture in your copy :)
 
 ## Requirements
 
@@ -35,6 +35,7 @@ yarn build # build production-ready gatsby site
 yarn serve # serve production-ready gatsby site
 yarn clean # clean gatsby development resources
 yarn lint # lint code with eslint
+yarn hint # hints for code with webhint
 yarn test # run jest tests
 yarn e2e # open cypress to start e2e tests manually
 yarn e2e:run # run cypress e2e tests
@@ -61,6 +62,7 @@ yarn e2e:ci # run cypress e2e tests in ci mode
 ### Quality
 
 - [ESLint](https://eslint.org/)
+- [WebHint](https://webhint.io/)
 - [Prettier](https://prettier.io/)
 
 ### Tests
