@@ -11,6 +11,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+      CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+      FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -20,28 +24,22 @@ jobs:
           node-version: '14.3.0'
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-        env:
-          FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
       - name: Run tests
         run: yarn run test:ci
-        env:
-          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
   e2e:
     runs-on: ubuntu-latest
+    env:
+      CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+      CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+      FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
     container: cypress/browsers:node12.16.2-chrome81-ff75
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-        env:
-          FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
       - name: Run e2e
         run: yarn run e2e:ci
-        env:
-          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
   security:
     runs-on: ubuntu-latest
     steps:
