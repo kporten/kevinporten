@@ -37,12 +37,13 @@ module.exports = {
         ],
       },
     },
-    // https://www.gatsbyjs.org/packages/gatsby-source-contentful/
+    // https://www.gatsbyjs.org/packages/gatsby-plugin-react-svg/
     {
-      resolve: 'gatsby-source-contentful',
+      resolve: 'gatsby-plugin-react-svg',
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        rule: {
+          include: /assets/,
+        },
       },
     },
     // https://www.gatsbyjs.org/packages/gatsby-plugin-intl/
@@ -53,6 +54,14 @@ module.exports = {
         languages: langs.langKeys,
         defaultLanguage: langs.langKeyDefault,
         redirect: true,
+      },
+    },
+    // https://www.gatsbyjs.org/packages/gatsby-source-contentful/
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
   ],

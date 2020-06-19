@@ -1,1 +1,9 @@
-{}
+{
+  "language": {
+    "de": "deutsch",
+    "en": "englisch"
+  },
+  "notfound": {
+    "back": "Zurück zur Startseite"
+  }
+}

@@ -1,1 +1,9 @@
-{}
+{
+  "language": {
+    "de": "german",
+    "en": "english"
+  },
+  "notfound": {
+    "back": "Back to the homepage"
+  }
+}

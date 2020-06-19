@@ -11,8 +11,9 @@ import Seo from './Seo';
 const GET_LAYOUT_CONTENTFUL = graphql`
   query Layout {
     contentfulLayout {
-      siteDescription
       siteTitle
+      siteDescription
+      made
       iconLight {
         fixed(toFormat: PNG, width: 32, quality: 100) {
           src
@@ -28,7 +29,6 @@ const GET_LAYOUT_CONTENTFUL = graphql`
           url
         }
       }
-      made
     }
   }
 `;

@@ -3,6 +3,7 @@ import { useIntl, navigate } from 'gatsby-plugin-intl';
 
 const useContentfulPage = <N extends { node_locale?: string | null }>(
   allContentfulPageNodes: N[],
+  shouldRedirect = true,
 ): N | undefined => {
   const { locale } = useIntl();
 
@@ -11,7 +12,7 @@ const useContentfulPage = <N extends { node_locale?: string | null }>(
   );
 
   useEffect(() => {
-    if (!contentfulPage) {
+    if (!contentfulPage && shouldRedirect) {
       navigate('/404');
     }
   });

@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInfoSquare } from '@fortawesome/pro-duotone-svg-icons';
 import { useStaticQuery, graphql } from 'gatsby';
 import { changeLocale, useIntl, Link } from 'gatsby-plugin-intl';
 
@@ -17,12 +19,12 @@ const GET_FOOTER_SITE_METADATA = graphql`
 
     allContentfulPage(
       filter: { position: { eq: "footer" } }
-      sort: { order: ASC, fields: priority }
+      sort: { fields: priority, order: ASC }
     ) {
       nodes {
+        node_locale
         title
         pathname
-        node_locale
       }
     }
   }
@@ -41,28 +43,35 @@ const Footer: React.FC<FooterProps> = ({ made }) => {
     GET_FOOTER_SITE_METADATA,
   );
 
-  const { locale } = useIntl();
+  const intl = useIntl();
 
   const contentfulPage = allContentfulPage.nodes.find((node) =>
-    node.node_locale?.startsWith(locale),
+    node.node_locale?.startsWith(intl.locale),
   );
 
   return (
     <footer className="text-white">
-      {made} |{' '}
-      <ul>
-        {site?.siteMetadata?.langs?.langKeys?.map((langKey) => (
-          <li key={langKey ?? ''}>
-            <button
-              type="button"
-              onClick={() => handleChangeLocale(langKey ?? '')}
-            >
-              {langKey}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <Link to={contentfulPage?.pathname ?? ''}>{contentfulPage?.title}</Link>
+      <div>
+        <div>{made}</div>
+        <ul>
+          {site?.siteMetadata?.langs?.langKeys?.map((langKey) => (
+            <li key={langKey ?? ''}>
+              <button
+                type="button"
+                onClick={() => handleChangeLocale(langKey ?? '')}
+              >
+                {intl.formatMessage({ id: `language.${langKey}` })}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <Link to={contentfulPage?.pathname ?? ''}>
+          <span>{contentfulPage?.title}</span>
+          <FontAwesomeIcon icon={faInfoSquare} swapOpacity />
+        </Link>
+      </div>
     </footer>
   );
 };

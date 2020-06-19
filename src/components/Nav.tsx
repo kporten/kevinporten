@@ -8,12 +8,12 @@ const query = graphql`
   query Nav {
     allContentfulPage(
       filter: { position: { eq: "header" } }
-      sort: { order: ASC, fields: priority }
+      sort: { fields: priority, order: ASC }
     ) {
       nodes {
+        node_locale
         title
         pathname
-        node_locale
       }
     }
   }
