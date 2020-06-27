@@ -52,12 +52,36 @@ yarn e2e:ci # run cypress e2e tests in ci mode
 
 > This repository contains a GitHub CI workflow that runs on push (except for tags) and pull request events.
 
+## Secrets
+
+You will need to define the following secrets to work with this project.
+
+```ini
+# `.env.development` file & GitHub > Repository > Settings > Secrets
+CONTENTFUL_ACCESS_TOKEN=... # https://www.contentful.com/developers/docs/references/authentication/
+CONTENTFUL_SPACE_ID=... # https://www.contentful.com/developers/docs/references/authentication/
+
+# GitHub > Repository > Settings > Secrets
+FONTAWESOME_NPM_AUTH_TOKEN=... # https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro
+SNYK_TOKEN=... # https://support.snyk.io/hc/en-us/articles/360004037537-Authentication-for-third-party-tools
+```
+
+```bash
+# the best place is your .zshrc, .bashrc, .bash_profile or in a similar file
+export FONTAWESOME_NPM_AUTH_TOKEN=... # https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro
+```
+
 ## Environment
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Gatsby](https://www.gatsbyjs.org/)
 - [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 - [GraphQL](https://graphql.org/)
+
+## Content
+
+- [Contentful](https://www.contentful.com/)
 
 ### Quality
 
