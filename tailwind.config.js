@@ -4,7 +4,11 @@ module.exports = {
     fontFamily: {
       body: ['Montserrat', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      transitionProperty: {
+        visibility: 'visibility, opacity',
+      },
+    },
   },
   variants: {},
   plugins: [],

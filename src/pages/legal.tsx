@@ -53,7 +53,7 @@ const Legal: React.FC = () => {
       {section.nodes
         .filter((sectionNode) => sectionNode.page?.id === contentfulPage.id)
         .map((sectionNode) => (
-          <section key={sectionNode.id} className="text-white">
+          <section key={sectionNode.id}>
             <h1>{sectionNode.title}</h1>
             <div>
               {documentToReactComponents(sectionNode.description?.json)}

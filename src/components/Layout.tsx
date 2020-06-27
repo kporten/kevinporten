@@ -1,9 +1,11 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import classNames from 'classnames';
 
 import type { LayoutQuery } from '../../types/graphql';
 
 import Background from './Background';
+import Container from './Container';
 import Footer from './Footer';
 import Header from './Header';
 import Seo from './Seo';
@@ -35,16 +37,17 @@ const GET_LAYOUT_CONTENTFUL = graphql`
 
 type LayoutProps = {
   pageTitle: string;
+  isLanding?: boolean;
   children: React.ReactNode;
 };
 
-const Layout: React.FC<LayoutProps> = ({ pageTitle, children }) => {
+const Layout: React.FC<LayoutProps> = ({ pageTitle, isLanding, children }) => {
   const { contentfulLayout } = useStaticQuery<LayoutQuery>(
     GET_LAYOUT_CONTENTFUL,
   );
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="min-h-screen bg-black">
       <Background className="absolute inset-0 z-0" />
       <Seo
         title={`${contentfulLayout?.siteTitle} | ${pageTitle}`}
@@ -54,10 +57,21 @@ const Layout: React.FC<LayoutProps> = ({ pageTitle, children }) => {
           dark: contentfulLayout?.iconDark?.fixed?.src ?? '',
         }}
       />
-      <div className="relative z-10">
-        <Header logoUrl={contentfulLayout?.logo?.file?.url ?? ''} />
-        <main>{children}</main>
-        <Footer made={contentfulLayout?.made ?? ''} />
+      <div className="flex flex-col items-stretch min-h-screen relative z-10">
+        <Container>
+          <Header logoUrl={contentfulLayout?.logo?.file?.url ?? ''} />
+        </Container>
+        <main className={classNames('flex-grow', { 'bg-white': !isLanding })}>
+          <Container>{children}</Container>
+        </main>
+        <div className={classNames({ 'bg-white': !isLanding })}>
+          <Container>
+            <Footer
+              className="text-gray-500"
+              made={contentfulLayout?.made ?? ''}
+            />
+          </Container>
+        </div>
       </div>
     </div>
   );

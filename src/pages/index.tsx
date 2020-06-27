@@ -49,7 +49,7 @@ const Index: React.FC = () => {
   }
 
   return (
-    <Layout pageTitle={contentfulPage.title ?? ''}>
+    <Layout pageTitle={contentfulPage.title ?? ''} isLanding>
       <section className="text-white">
         <div>
           <h1>
@@ -68,6 +68,7 @@ const Index: React.FC = () => {
           src={section.titleImage?.fixed?.src}
           srcSet={section.titleImage?.fixed?.srcSet}
           alt={section.titleImage?.title ?? ''}
+          className="rounded-full"
         />
       </section>
     </Layout>

@@ -42,7 +42,7 @@ const NotFound: React.FC = () => {
 
   return (
     <Layout pageTitle={contentfulPage.title ?? ''}>
-      <section className="text-white">
+      <section>
         <h1>{contentfulPage.title}</h1>
         <div>
           <UndrawTaken />

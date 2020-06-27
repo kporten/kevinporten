@@ -8,7 +8,7 @@ type HeaderProps = {
 };
 
 const Header: React.FC<HeaderProps> = ({ logoUrl }) => (
-  <header>
+  <header className="flex justify-between h-16">
     <Logo url={logoUrl} />
     <Nav />
   </header>
