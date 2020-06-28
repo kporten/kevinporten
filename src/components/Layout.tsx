@@ -16,13 +16,13 @@ const GET_LAYOUT_CONTENTFUL = graphql`
     contentfulLayout {
       siteTitle
       siteDescription
-      made
-      iconLight {
+      siteMade
+      iconLightTheme {
         fixed(toFormat: PNG, width: 32, quality: 100) {
           src
         }
       }
-      iconDark {
+      iconDarkTheme {
         fixed(toFormat: PNG, width: 32, quality: 100) {
           src
         }
@@ -54,8 +54,8 @@ const Layout: React.FC<LayoutProps> = ({ pageTitle, isLanding, children }) => {
         title={`${contentfulLayout?.siteTitle} | ${pageTitle}`}
         description={contentfulLayout?.siteDescription ?? ''}
         icon={{
-          light: contentfulLayout?.iconLight?.fixed?.src ?? '',
-          dark: contentfulLayout?.iconDark?.fixed?.src ?? '',
+          light: contentfulLayout?.iconLightTheme?.fixed?.src ?? '',
+          dark: contentfulLayout?.iconDarkTheme?.fixed?.src ?? '',
         }}
       />
       <div className="flex flex-col items-stretch min-h-screen relative z-10">
@@ -74,7 +74,7 @@ const Layout: React.FC<LayoutProps> = ({ pageTitle, isLanding, children }) => {
           <Container>
             <Footer
               className="text-gray-500"
-              made={contentfulLayout?.made ?? ''}
+              made={contentfulLayout?.siteMade ?? ''}
             />
           </Container>
         </div>
