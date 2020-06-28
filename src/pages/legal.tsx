@@ -50,16 +50,18 @@ const Legal: React.FC = () => {
 
   return (
     <Layout pageTitle={contentfulPage.title ?? ''}>
-      {section.nodes
-        .filter((sectionNode) => sectionNode.page?.id === contentfulPage.id)
-        .map((sectionNode) => (
-          <section key={sectionNode.id}>
-            <h1>{sectionNode.title}</h1>
-            <div>
-              {documentToReactComponents(sectionNode.description?.json)}
-            </div>
-          </section>
-        ))}
+      <div className="space-y-16">
+        {section.nodes
+          .filter((sectionNode) => sectionNode.page?.id === contentfulPage.id)
+          .map((sectionNode) => (
+            <section key={sectionNode.id}>
+              <h1 className="text-center">{sectionNode.title}</h1>
+              <div className="content">
+                {documentToReactComponents(sectionNode.description?.json)}
+              </div>
+            </section>
+          ))}
+      </div>
     </Layout>
   );
 };
