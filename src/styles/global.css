@@ -1,0 +1,41 @@
+/* tailwind 1/2 */
+@tailwind base;
+
+/* base */
+body {
+  @apply font-body text-base;
+}
+
+h1 {
+  @apply text-center text-xl uppercase mb-6;
+}
+
+/* content(ful) */
+.content a {
+  @apply text-blue-500 transition-colors duration-200;
+}
+
+.content a:hover {
+  @apply text-blue-700;
+}
+
+.content p {
+  @apply mb-4;
+}
+
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  @apply uppercase mb-2;
+}
+
+/* utilities */
+.transition-link {
+  @apply transition-colors duration-200;
+}
+
+/* tailwind 2/2 */
+@tailwind components;
+@tailwind utilities;

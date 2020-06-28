@@ -1,0 +1,39 @@
+# Build
+
+[build]
+  publish = "public/"
+  command = "yarn build"
+
+# Redirect domain aliases to primary domain
+
+[[redirects]]
+  from = "https://www.kevinporten.de/*"
+  to = "https://www.kevinporten.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://kevinporten.de/*"
+  to = "https://www.kevinporten.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.kevin-porten.de/*"
+  to = "https://www.kevinporten.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://kevin-porten.de/*"
+  to = "https://www.kevinporten.dev/:splat"
+  status = 301
+  force = true
+
+# Redirect default Netlify subdomain to primary domain
+
+[[redirects]]
+  from = "https://kevinporten.netlify.com/*"
+  to = "https://www.kevinporten.dev/:splat"
+  status = 301
+  force = true
