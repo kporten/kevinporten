@@ -121,7 +121,7 @@ const Projects: React.FC = () => {
                         <Img
                           fluid={projectNode.preview.fluid as FluidObject}
                           alt={projectNode.preview.title ?? ''}
-                          className="mb-2"
+                          className="mb-2 rounded"
                         />
                       )}
                       <div className="flex justify-between">
