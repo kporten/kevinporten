@@ -11,9 +11,13 @@ type SeoProps = {
 };
 
 const Seo: React.FC<SeoProps> = ({ title, description, icon }) => {
-  const favicon = window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? icon.dark
-    : icon.light;
+  let favicon = icon.light;
+
+  if (typeof window !== 'undefined') {
+    favicon = window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? icon.dark
+      : icon.light;
+  }
 
   return (
     <Helmet>
