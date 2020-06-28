@@ -74,7 +74,7 @@ const Skills: React.FC = () => {
             <section key={sectionNode.id}>
               <h1 className="text-center">{sectionNode.title}</h1>
               <motion.div
-                className="grid grid-cols-6 gap-4"
+                className="grid grid-cols-2 lg:grid-cols-6 gap-4"
                 variants={{
                   show: {
                     transition: {

@@ -1,12 +1,18 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import { motion } from 'framer-motion';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 
+import type { FluidObject } from 'gatsby-image';
 import type { ProjectsQuery } from '../../types/graphql';
 
 import useContentfulPage from '../hooks/useContentfulPage';
 
 import Layout from '../components/Layout';
+import Tag from '../components/Tag';
 
 const GET_PROJECTS_CONTENTFUL_PAGE = graphql`
   query Projects {
@@ -43,7 +49,14 @@ const GET_PROJECTS_CONTENTFUL_PAGE = graphql`
           id
         }
         title
+        url
         languages
+        preview {
+          title
+          fluid(maxWidth: 600, quality: 100) {
+            ...GatsbyContentfulFluid_withWebp_noBase64
+          }
+        }
         description {
           json
         }
@@ -65,32 +78,86 @@ const Projects: React.FC = () => {
 
   return (
     <Layout pageTitle={contentfulPage.title ?? ''}>
-      {section.nodes
-        .filter((sectionNode) => sectionNode.page?.id === contentfulPage.id)
-        .map((sectionNode) => (
-          <section key={sectionNode.id}>
-            <h1>{sectionNode.title}</h1>
-            {project.nodes
-              .filter(
-                (projectNode) => projectNode.section?.id === sectionNode.id,
-              )
-              .map((projectNode) => (
-                <div key={projectNode.id}>
-                  <h2>{projectNode.title}</h2>
-                  <div>
-                    {documentToReactComponents(projectNode.description?.json)}
-                  </div>
-                  <div>
-                    {projectNode.languages?.map((language) => (
-                      <span key={`${projectNode.id}_${language}`}>
-                        {language}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-          </section>
-        ))}
+      <div className="space-y-16">
+        {section.nodes
+          .filter((sectionNode) => sectionNode.page?.id === contentfulPage.id)
+          .map((sectionNode) => (
+            <section key={sectionNode.id}>
+              <h1 className="text-center">{sectionNode.title}</h1>
+              <motion.div
+                className="grid lg:grid-cols-2 gap-4"
+                variants={{
+                  show: {
+                    transition: {
+                      staggerChildren: 0.1,
+                    },
+                  },
+                  hide: {},
+                }}
+                initial="hide"
+                animate="show"
+              >
+                {project.nodes
+                  .filter(
+                    (projectNode) => projectNode.section?.id === sectionNode.id,
+                  )
+                  .map((projectNode) => (
+                    <motion.div
+                      key={projectNode.id}
+                      className="border border-gray-500 p-4 rounded flex flex-col"
+                      variants={{
+                        show: {
+                          opacity: 1,
+                          y: 0,
+                        },
+                        hide: {
+                          opacity: 0,
+                          y: -20,
+                        },
+                      }}
+                    >
+                      {projectNode.preview && (
+                        <Img
+                          fluid={projectNode.preview.fluid as FluidObject}
+                          alt={projectNode.preview.title ?? ''}
+                          className="mb-2"
+                        />
+                      )}
+                      <div className="flex justify-between">
+                        <h2 className="text-xl">{projectNode.title}</h2>
+                        {projectNode.url && (
+                          <a
+                            href={projectNode.url}
+                            aria-label={projectNode.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hover:text-gray-500 transition-colors duration-200"
+                          >
+                            <FontAwesomeIcon icon={faGithubSquare} size="2x" />
+                          </a>
+                        )}
+                      </div>
+                      <div className="flex-grow mt-2">
+                        {documentToReactComponents(
+                          projectNode.description?.json,
+                        )}
+                      </div>
+                      <div className="mt-2">
+                        {projectNode.languages?.map((language) => (
+                          <Tag
+                            key={`${projectNode.id}_${language}`}
+                            className="mt-2 mr-2"
+                          >
+                            {language}
+                          </Tag>
+                        ))}
+                      </div>
+                    </motion.div>
+                  ))}
+              </motion.div>
+            </section>
+          ))}
+      </div>
     </Layout>
   );
 };

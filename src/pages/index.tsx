@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
+import type { FixedObject } from 'gatsby-image';
 import type { IndexQuery } from '../../types/graphql';
 
 import useContentfulPage from '../hooks/useContentfulPage';
@@ -22,9 +24,8 @@ const GET_INDEX_CONTENTFUL_PAGE = graphql`
           title
           titleImage {
             title
-            fixed(width: 300, height: 300, quality: 100) {
-              src
-              srcSet
+            fixed(width: 300, quality: 100) {
+              ...GatsbyContentfulFixed_withWebp_noBase64
             }
           }
           description {
@@ -85,9 +86,8 @@ const Index: React.FC = () => {
           </ul>
         </div>
         <div className="flex-shrink-0 flex justify-center items-center">
-          <img
-            src={section.titleImage?.fixed?.src}
-            srcSet={section.titleImage?.fixed?.srcSet}
+          <Img
+            fixed={section.titleImage?.fixed as FixedObject}
             alt={section.titleImage?.title ?? ''}
             className="rounded-full"
           />
