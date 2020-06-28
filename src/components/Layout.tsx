@@ -61,7 +61,12 @@ const Layout: React.FC<LayoutProps> = ({ pageTitle, isLanding, children }) => {
         <Container>
           <Header logoUrl={contentfulLayout?.logo?.file?.url ?? ''} />
         </Container>
-        <main className={classNames('flex-grow', { 'bg-white': !isLanding })}>
+        <main
+          className={classNames('flex-grow', {
+            'bg-white': !isLanding,
+            'flex items-center': isLanding,
+          })}
+        >
           <Container>{children}</Container>
         </main>
         <div className={classNames({ 'bg-white': !isLanding })}>

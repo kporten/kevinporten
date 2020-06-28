@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
@@ -8,6 +8,7 @@ import useContentfulPage from '../hooks/useContentfulPage';
 
 import Layout from '../components/Layout';
 import SocialNetwork from '../components/SocialNetwork';
+import WordTransition from '../components/WordTransition';
 
 const GET_INDEX_CONTENTFUL_PAGE = graphql`
   query Index {
@@ -44,19 +45,38 @@ const Index: React.FC = () => {
 
   const section = contentfulPage?.section?.[0];
 
+  const [tags, setTags] = useState(section?.tags as string[]);
+
   if (!contentfulPage || !section) {
     return null;
   }
 
+  const handleAnimationComplete = () => {
+    let nextTags = tags?.slice(1);
+
+    if (nextTags?.length === 0) {
+      nextTags = section?.tags as string[];
+    }
+
+    setTags(nextTags);
+  };
+
   return (
     <Layout pageTitle={contentfulPage.title ?? ''} isLanding>
-      <section className="text-white">
-        <div>
+      <section className="flex justify-center items-center flex-col-reverse lg:flex-row lg:space-x-20 xl:space-x-40 text-white">
+        <div className="mt-8 lg:mt-0">
           <h1>
-            {section.title} {section.tags?.join(', ')}
+            <span className="inline-block mr-1">{section.title}</span>
+            <WordTransition
+              className="text-blue-500"
+              word={tags?.[0] ?? ''}
+              onAnimationComplete={handleAnimationComplete}
+            />
           </h1>
-          <div>{documentToReactComponents(section.description?.json)}</div>
-          <ul>
+          <div className="mb-2">
+            {documentToReactComponents(section.description?.json)}
+          </div>
+          <ul className="flex space-x-4">
             {section.socialNetworks?.map((socialNetwork) => (
               <li key={socialNetwork ?? ''}>
                 <SocialNetwork link={socialNetwork ?? ''} />
@@ -64,12 +84,14 @@ const Index: React.FC = () => {
             ))}
           </ul>
         </div>
-        <img
-          src={section.titleImage?.fixed?.src}
-          srcSet={section.titleImage?.fixed?.srcSet}
-          alt={section.titleImage?.title ?? ''}
-          className="rounded-full"
-        />
+        <div className="flex-shrink-0 flex justify-center items-center">
+          <img
+            src={section.titleImage?.fixed?.src}
+            srcSet={section.titleImage?.fixed?.srcSet}
+            alt={section.titleImage?.title ?? ''}
+            className="rounded-full"
+          />
+        </div>
       </section>
     </Layout>
   );

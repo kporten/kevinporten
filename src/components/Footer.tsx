@@ -51,17 +51,29 @@ const Footer: React.FC<FooterProps> = ({ className, made }) => {
     node.node_locale?.startsWith(intl.locale),
   );
 
+  const madeWithColor = made.split(/(❤)/).map((part) => {
+    if (part === '❤') {
+      return (
+        <span key={part} className="text-red-700">
+          {part}
+        </span>
+      );
+    }
+
+    return <span key={part}>{part}</span>;
+  });
+
   return (
     <footer className={classNames(className, 'md:flex md:justify-between')}>
       <div className="mb-2 md:mb-0">
-        <div className="mb-2">{made}</div>
+        <div className="mb-2">{madeWithColor}</div>
         <ul className="flex items-center space-x-2">
           <li className="text-sm">{intl.formatMessage({ id: 'language' })}:</li>
           {site?.siteMetadata?.langs?.langKeys?.map((langKey) => (
             <li key={langKey ?? ''}>
               <button
                 type="button"
-                className="text-sm focus:outline-none"
+                className="text-sm focus:outline-none hover:text-blue-500 transition-colors duration-200"
                 onClick={() => handleChangeLocale(langKey ?? '')}
               >
                 {intl.formatMessage({ id: `languages.${langKey}` })}
@@ -70,7 +82,10 @@ const Footer: React.FC<FooterProps> = ({ className, made }) => {
           ))}
         </ul>
       </div>
-      <Link to={contentfulPage?.pathname ?? ''}>
+      <Link
+        to={contentfulPage?.pathname ?? ''}
+        className="hover:text-blue-500 transition-colors duration-200"
+      >
         <span className="mr-2">{contentfulPage?.title}</span>
         <FontAwesomeIcon icon={faInfoSquare} swapOpacity />
       </Link>

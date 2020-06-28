@@ -70,7 +70,7 @@ const Nav: React.FC = () => {
                 >
                   <Link
                     to={node.pathname ?? ''}
-                    className="block lg:inline-block p-4 uppercase text-xl text-center text-white hover:text-blue-500 transition-colors duration-200"
+                    className="block p-4 uppercase text-xl text-center text-white hover:text-blue-500 transition-colors duration-200"
                   >
                     {node.title}
                   </Link>
