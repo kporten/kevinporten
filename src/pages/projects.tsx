@@ -83,7 +83,7 @@ const Projects: React.FC = () => {
           .filter((sectionNode) => sectionNode.page?.id === contentfulPage.id)
           .map((sectionNode) => (
             <section key={sectionNode.id}>
-              <h1 className="text-center">{sectionNode.title}</h1>
+              <h1>{sectionNode.title}</h1>
               <motion.div
                 className="grid lg:grid-cols-2 gap-4"
                 variants={{
@@ -131,7 +131,7 @@ const Projects: React.FC = () => {
                             aria-label={projectNode.url}
                             target="_blank"
                             rel="noreferrer"
-                            className="hover:text-gray-500 transition-colors duration-200"
+                            className="hover:text-gray-500 transition-link"
                           >
                             <FontAwesomeIcon icon={faGithubSquare} size="2x" />
                           </a>

@@ -1,18 +1,21 @@
+/* tailwind 1/2 */
 @tailwind base;
 
+/* base */
 body {
   @apply font-body text-base;
 }
 
 h1 {
-  @apply text-xl uppercase mb-6;
+  @apply text-center text-xl uppercase mb-6;
 }
 
-p a {
+/* content(ful) */
+.content a {
   @apply text-blue-500 transition-colors duration-200;
 }
 
-p a:hover {
+.content a:hover {
   @apply text-blue-700;
 }
 
@@ -28,5 +31,11 @@ p a:hover {
   @apply uppercase mb-2;
 }
 
+/* utilities */
+.transition-link {
+  @apply transition-colors duration-200;
+}
+
+/* tailwind 2/2 */
 @tailwind components;
 @tailwind utilities;

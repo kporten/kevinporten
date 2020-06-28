@@ -73,7 +73,7 @@ const Footer: React.FC<FooterProps> = ({ className, made }) => {
             <li key={langKey ?? ''}>
               <button
                 type="button"
-                className="text-sm focus:outline-none hover:text-blue-500 transition-colors duration-200"
+                className="text-sm focus:outline-none hover:text-blue-500 transition-link"
                 onClick={() => handleChangeLocale(langKey ?? '')}
               >
                 {intl.formatMessage({ id: `languages.${langKey}` })}
@@ -84,7 +84,7 @@ const Footer: React.FC<FooterProps> = ({ className, made }) => {
       </div>
       <Link
         to={contentfulPage?.pathname ?? ''}
-        className="hover:text-blue-500 transition-colors duration-200"
+        className="hover:text-blue-500 transition-link"
       >
         <span className="mr-2">{contentfulPage?.title}</span>
         <FontAwesomeIcon icon={faInfoSquare} swapOpacity />

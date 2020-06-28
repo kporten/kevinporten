@@ -66,7 +66,7 @@ const Index: React.FC = () => {
     <Layout pageTitle={contentfulPage.title ?? ''} isLanding>
       <section className="flex justify-center items-center flex-col-reverse lg:flex-row lg:space-x-20 xl:space-x-40 text-white">
         <div className="mt-8 lg:mt-0">
-          <h1>
+          <h1 className="lg:text-left">
             <span className="inline-block mr-1">{section.title}</span>
             <WordTransition
               className="text-blue-500"
@@ -74,7 +74,7 @@ const Index: React.FC = () => {
               onAnimationComplete={handleAnimationComplete}
             />
           </h1>
-          <div className="mb-2">
+          <div className="content mb-2">
             {documentToReactComponents(section.description?.json)}
           </div>
           <ul className="flex space-x-4">

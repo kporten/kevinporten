@@ -39,9 +39,7 @@ const SocialNetwork: React.FC<SocialNetworkProps> = ({ link }) => {
         aria-label={link}
         target="_blank"
         rel="noreferrer"
-        className={classNames(
-          `hover:text-${color} transition-colors duration-200`,
-        )}
+        className={classNames(`hover:text-${color} transition-link`)}
       >
         <FontAwesomeIcon icon={icon} size="2x" />
       </a>

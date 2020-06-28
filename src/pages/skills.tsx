@@ -72,7 +72,7 @@ const Skills: React.FC = () => {
           .filter((sectionNode) => sectionNode.page?.id === contentfulPage.id)
           .map((sectionNode) => (
             <section key={sectionNode.id}>
-              <h1 className="text-center">{sectionNode.title}</h1>
+              <h1>{sectionNode.title}</h1>
               <motion.div
                 className="grid grid-cols-2 lg:grid-cols-6 gap-4"
                 variants={{
