@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+
 import { useIntl, navigate } from 'gatsby-plugin-intl';
 
 const useContentfulPage = <N extends { node_locale?: string | null }>(

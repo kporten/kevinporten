@@ -1,12 +1,13 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import type { LegalQuery } from '../../types/graphql';
 
-import useContentfulPage from '../hooks/useContentfulPage';
-
 import Layout from '../components/Layout';
+
+import useContentfulPage from '../hooks/useContentfulPage';
 
 const GET_LEGAL_CONTENTFUL_PAGE = graphql`
   query Legal {

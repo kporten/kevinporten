@@ -1,14 +1,14 @@
 import React from 'react';
+
 import { useStaticQuery, graphql } from 'gatsby';
 import { useIntl, Link } from 'gatsby-plugin-intl';
 
 import type { NotFoundQuery } from '../../types/graphql';
 
-import useContentfulPage from '../hooks/useContentfulPage';
-
 import Layout from '../components/Layout';
-
 import UndrawTaken from '../assets/UndrawTaken.svg';
+
+import useContentfulPage from '../hooks/useContentfulPage';
 
 const GET_NOT_FOUND_CONTENTFUL_PAGE = graphql`
   query NotFound {

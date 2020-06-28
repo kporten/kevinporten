@@ -1,12 +1,13 @@
 import React from 'react';
-import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import {
   faLinkedin,
   faGithubSquare,
   faTwitterSquare,
   faXingSquare,
 } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames';
 
 import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 

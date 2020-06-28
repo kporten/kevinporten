@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby-plugin-intl';
+
 import { motion } from 'framer-motion';
+import { Link } from 'gatsby-plugin-intl';
 
 type LogoProps = {
   url: string;

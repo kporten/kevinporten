@@ -1,9 +1,10 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { faInfoSquare } from '@fortawesome/pro-duotone-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 import { changeLocale, useIntl, Link } from 'gatsby-plugin-intl';
-import classNames from 'classnames';
 
 import type { FooterQuery } from '../../types/graphql';
 

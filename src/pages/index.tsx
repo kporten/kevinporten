@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
+
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import type { FixedObject } from 'gatsby-image';
 import type { IndexQuery } from '../../types/graphql';
 
-import useContentfulPage from '../hooks/useContentfulPage';
-
 import Layout from '../components/Layout';
 import SocialNetwork from '../components/SocialNetwork';
 import WordTransition from '../components/WordTransition';
+
+import useContentfulPage from '../hooks/useContentfulPage';
 
 const GET_INDEX_CONTENTFUL_PAGE = graphql`
   query Index {

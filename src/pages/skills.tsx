@@ -1,16 +1,17 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+
 import classNames from 'classnames';
-import simpleIcons from 'simple-icons';
 import { motion } from 'framer-motion';
+import { useStaticQuery, graphql } from 'gatsby';
+import simpleIcons from 'simple-icons';
 
 import type { SkillsQuery } from '../../types/graphql';
-
-import useContentfulPage from '../hooks/useContentfulPage';
 
 import Layout from '../components/Layout';
 
 import styles from '../styles/skills.module.css';
+
+import useContentfulPage from '../hooks/useContentfulPage';
 
 const GET_SKILLS_CONTENTFUL_PAGE = graphql`
   query Skills {

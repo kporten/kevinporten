@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+
+import { AnimatePresence, motion } from 'framer-motion';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useIntl, Link } from 'gatsby-plugin-intl';
-import { AnimatePresence, motion } from 'framer-motion';
 
 import NavButton from './NavButton';
 

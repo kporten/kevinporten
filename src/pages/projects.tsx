@@ -1,18 +1,19 @@
 import React from 'react';
+
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'framer-motion';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { motion } from 'framer-motion';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 
 import type { FluidObject } from 'gatsby-image';
 import type { ProjectsQuery } from '../../types/graphql';
 
-import useContentfulPage from '../hooks/useContentfulPage';
-
 import Layout from '../components/Layout';
 import Tag from '../components/Tag';
+
+import useContentfulPage from '../hooks/useContentfulPage';
 
 const GET_PROJECTS_CONTENTFUL_PAGE = graphql`
   query Projects {
