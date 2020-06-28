@@ -42,13 +42,18 @@ const NotFound: React.FC = () => {
 
   return (
     <Layout pageTitle={contentfulPage.title ?? ''}>
-      <section>
-        <h1>{contentfulPage.title}</h1>
-        <div>
-          <UndrawTaken />
+      <section className="space-y-16">
+        <h1 className="text-center">{contentfulPage.title}</h1>
+        <div className="flex flex-col items-center h-64">
+          <UndrawTaken className="w-full" />
         </div>
-        <div>
-          <Link to="/">{intl.formatMessage({ id: 'notfound.back' })}</Link>
+        <div className="text-center">
+          <Link
+            to="/"
+            className="hover:text-blue-500 transition-colors duration-200"
+          >
+            {intl.formatMessage({ id: 'notfound.back' })}
+          </Link>
         </div>
       </section>
     </Layout>
