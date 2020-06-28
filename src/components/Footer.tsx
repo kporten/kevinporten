@@ -85,7 +85,7 @@ const Footer: React.FC<FooterProps> = ({ className, made }) => {
       </div>
       <Link
         to={contentfulPage?.pathname ?? ''}
-        className="hover:text-blue-500 transition-link"
+        className="inline-block hover:text-blue-500 transition-link"
       >
         <span className="mr-2">{contentfulPage?.title}</span>
         <FontAwesomeIcon icon={faInfoSquare} swapOpacity size="1x" />

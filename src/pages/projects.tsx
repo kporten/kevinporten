@@ -132,7 +132,7 @@ const Projects: React.FC = () => {
                             aria-label={projectNode.url}
                             target="_blank"
                             rel="noreferrer"
-                            className="hover:text-gray-500 transition-link"
+                            className="inline-block hover:text-gray-500 transition-link"
                           >
                             <FontAwesomeIcon icon={faGithubSquare} size="2x" />
                           </a>
