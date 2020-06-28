@@ -1,6 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import classNames from 'classnames';
 import simpleIcons from 'simple-icons';
+import { motion } from 'framer-motion';
 
 import type { SkillsQuery } from '../../types/graphql';
 
@@ -65,29 +67,62 @@ const Skills: React.FC = () => {
 
   return (
     <Layout pageTitle={contentfulPage.title ?? ''}>
-      {section.nodes
-        .filter((sectionNode) => sectionNode.page?.id === contentfulPage.id)
-        .map((sectionNode) => (
-          <section key={sectionNode.id}>
-            <h1>{sectionNode.title}</h1>
-            {skill.nodes
-              .filter((skillNode) => skillNode.section?.id === sectionNode.id)
-              .map((skillNode) => (
-                <div
-                  key={skillNode.id}
-                  style={{ backgroundColor: skillNode.hexColor ?? '#ffffff' }}
-                >
-                  <h2>{skillNode.title}</h2>
-                  <div
-                    className={styles.skill}
-                    dangerouslySetInnerHTML={{
-                      __html: simpleIcons.get(skillNode.icon ?? '')?.svg,
-                    }}
-                  />
-                </div>
-              ))}
-          </section>
-        ))}
+      <div className="space-y-16">
+        {section.nodes
+          .filter((sectionNode) => sectionNode.page?.id === contentfulPage.id)
+          .map((sectionNode) => (
+            <section key={sectionNode.id}>
+              <h1 className="text-center">{sectionNode.title}</h1>
+              <motion.div
+                className="grid grid-cols-6 gap-4"
+                variants={{
+                  show: {
+                    transition: {
+                      staggerChildren: 0.1,
+                    },
+                  },
+                  hide: {},
+                }}
+                initial="hide"
+                animate="show"
+              >
+                {skill.nodes
+                  .filter(
+                    (skillNode) => skillNode.section?.id === sectionNode.id,
+                  )
+                  .map((skillNode) => (
+                    <motion.div
+                      key={skillNode.id}
+                      className="flex flex-col-reverse items-center p-4 rounded"
+                      style={{
+                        backgroundColor: skillNode.hexColor ?? '#ffffff',
+                      }}
+                      variants={{
+                        show: {
+                          opacity: 1,
+                          y: 0,
+                        },
+                        hide: {
+                          opacity: 0,
+                          y: -20,
+                        },
+                      }}
+                    >
+                      <h2 className="text-center text-white">
+                        {skillNode.title}
+                      </h2>
+                      <div
+                        className={classNames(styles.skill, 'w-20 mb-2')}
+                        dangerouslySetInnerHTML={{
+                          __html: simpleIcons.get(skillNode.icon ?? '')?.svg,
+                        }}
+                      />
+                    </motion.div>
+                  ))}
+              </motion.div>
+            </section>
+          ))}
+      </div>
     </Layout>
   );
 };
