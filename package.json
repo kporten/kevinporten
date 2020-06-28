@@ -1,6 +1,6 @@
 {
   "name": "kevinporten",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": false,
   "license": "MIT",
   "description": "My personal homepage",
@@ -19,7 +19,6 @@
     "e2e:run": "cypress run",
     "e2e:ci": "start-server-and-test start 8000 e2e:run",
     "tsc:check": "tsc --project ./tsconfig.json && tsc --project ./cypress/tsconfig.json",
-    "version": "auto-changelog --package --template keepachangelog --sort-commits relevance && git add CHANGELOG.md",
     "postversion": "git push --follow-tags",
     "commit": "git-cz"
   },
