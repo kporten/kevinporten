@@ -138,7 +138,7 @@ const Projects: React.FC = () => {
                           </a>
                         )}
                       </div>
-                      <div className="flex-grow mt-2">
+                      <div className="flex-grow mt-2 content">
                         {documentToReactComponents(
                           projectNode.description?.json,
                         )}
