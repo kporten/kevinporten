@@ -2598,6 +2598,14 @@
     npm-registry-fetch "^8.0.2"
     semver "^7.3.2"
 
+"@icons-pack/react-simple-icons@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@icons-pack/react-simple-icons/-/react-simple-icons-3.4.0.tgz#1b1a7688133bbd6cb395f4eff407bc429424c0e5"
+  integrity sha512-9TLaFP8cb2IiynDeuGlmND/VSHyeK6/trLMuPu6mRaa+YQxtFsfY5jMYNRspJ2dKqAmmVDNBM57nPTKO/gCwAQ==
+  dependencies:
+    prop-types "^15.7.2"
+    react "^16.13.1"
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -17282,11 +17290,6 @@ simple-git@2.10.0:
   dependencies:
     "@kwsites/file-exists" "^1.1.1"
     debug "^4.1.1"
-
-simple-icons@^2.19.0:
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-2.19.0.tgz#02f3e1d544812a54b0460a6557bbd0e66ac46a3c"
-  integrity sha512-DI0ZIKGoZlEnGqPF5jIGaOWWDvcXL323SZc7JBQp+pT/k0p72GU9Vxy7+UEtU9zZfWTbKiSQgtERF3pzPFhV2A==
 
 simple-swizzle@^0.2.2:
   version "0.2.2"

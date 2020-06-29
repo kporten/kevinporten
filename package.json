@@ -29,6 +29,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.1",
     "@fortawesome/pro-duotone-svg-icons": "^5.13.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "@icons-pack/react-simple-icons": "^3.4.0",
     "classnames": "^2.2.6",
     "dotenv": "^8.2.0",
     "framer-motion": "^1.11.1",
@@ -46,7 +47,6 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-particles-js": "^3.2.1",
-    "simple-icons": "^2.19.0",
     "tailwindcss": "^1.4.6"
   },
   "devDependencies": {

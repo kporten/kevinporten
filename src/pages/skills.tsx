@@ -1,15 +1,12 @@
 import React from 'react';
 
-import classNames from 'classnames';
+import * as SimpleIcons from '@icons-pack/react-simple-icons';
 import { motion } from 'framer-motion';
 import { useStaticQuery, graphql } from 'gatsby';
-import simpleIcons from 'simple-icons';
 
 import type { SkillsQuery } from '../../types/graphql';
 
 import Layout from '../components/Layout';
-
-import styles from '../styles/skills.module.css';
 
 import useContentfulPage from '../hooks/useContentfulPage';
 
@@ -91,35 +88,36 @@ const Skills: React.FC = () => {
                   .filter(
                     (skillNode) => skillNode.section?.id === sectionNode.id,
                   )
-                  .map((skillNode) => (
-                    <motion.div
-                      key={skillNode.id}
-                      className="flex flex-col-reverse items-center p-4 rounded"
-                      style={{
-                        backgroundColor: skillNode.hexColor ?? '#ffffff',
-                      }}
-                      variants={{
-                        show: {
-                          opacity: 1,
-                          y: 0,
-                        },
-                        hide: {
-                          opacity: 0,
-                          y: -20,
-                        },
-                      }}
-                    >
-                      <h2 className="text-center text-white">
-                        {skillNode.title}
-                      </h2>
-                      <div
-                        className={classNames(styles.skill, 'w-20 mb-2')}
-                        dangerouslySetInnerHTML={{
-                          __html: simpleIcons.get(skillNode.icon ?? '')?.svg,
+                  .map((skillNode) => {
+                    const Icon = (SimpleIcons as {
+                      [key: string]: typeof SimpleIcons.Javascript;
+                    })[skillNode.icon ?? ''];
+
+                    return (
+                      <motion.div
+                        key={skillNode.id}
+                        className="flex flex-col-reverse items-center p-4 rounded"
+                        style={{
+                          backgroundColor: skillNode.hexColor ?? '#ffffff',
                         }}
-                      />
-                    </motion.div>
-                  ))}
+                        variants={{
+                          show: {
+                            opacity: 1,
+                            y: 0,
+                          },
+                          hide: {
+                            opacity: 0,
+                            y: -20,
+                          },
+                        }}
+                      >
+                        <h2 className="text-center text-white">
+                          {skillNode.title}
+                        </h2>
+                        <Icon size={80} className="mb-2" color="#ffffff" />
+                      </motion.div>
+                    );
+                  })}
               </motion.div>
             </section>
           ))}
