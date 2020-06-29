@@ -17,20 +17,20 @@ type SocialNetworkProps = {
 
 const SocialNetwork: React.FC<SocialNetworkProps> = ({ link }) => {
   let icon: IconDefinition | null = null;
-  let color = 'blue-500';
+  let color = 'hover:text-blue-500';
 
   if (link.includes('linkedin')) {
     icon = faLinkedin;
-    color = 'blue-700';
+    color = 'hover:text-blue-700';
   } else if (link.includes('github')) {
     icon = faGithubSquare;
-    color = 'gray-500';
+    color = 'hover:text-gray-500';
   } else if (link.includes('twitter')) {
     icon = faTwitterSquare;
-    color = 'blue-500';
+    color = 'hover:text-blue-500';
   } else if (link.includes('xing')) {
     icon = faXingSquare;
-    color = 'teal-700';
+    color = 'hover:text-teal-700';
   }
 
   if (icon) {
@@ -40,9 +40,7 @@ const SocialNetwork: React.FC<SocialNetworkProps> = ({ link }) => {
         aria-label={link}
         target="_blank"
         rel="noreferrer"
-        className={classNames(
-          `inline-block hover:text-${color} transition-link`,
-        )}
+        className={classNames(`inline-block ${color} transition-link`)}
       >
         <FontAwesomeIcon icon={icon} size="2x" />
       </a>
