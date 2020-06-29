@@ -86,7 +86,7 @@ const Projects: React.FC = () => {
             <section key={sectionNode.id}>
               <h1>{sectionNode.title}</h1>
               <motion.div
-                className="grid lg:grid-cols-2 gap-4"
+                className="grid grid-cols-1 lg:grid-cols-2 gap-4"
                 variants={{
                   show: {
                     transition: {
