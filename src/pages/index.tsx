@@ -68,7 +68,7 @@ const Index: React.FC = () => {
       <section className="flex justify-center items-center flex-col-reverse lg:flex-row lg:space-x-20 xl:space-x-40 text-white">
         <div className="mt-8 lg:mt-0">
           <h1 className="lg:text-left">
-            <span className="inline-block mr-1">{section.title}</span>
+            <span className="inline-block">{section.title}&nbsp;</span>
             <WordTransition
               className="text-blue-500"
               word={tags?.[0] ?? ''}
