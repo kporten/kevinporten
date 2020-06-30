@@ -1,6 +1,6 @@
 import React from 'react';
 
-import * as SimpleIcons from '@icons-pack/react-simple-icons';
+import loadable from '@loadable/component';
 import { motion } from 'framer-motion';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -9,6 +9,15 @@ import type { SkillsQuery } from '../../types/graphql';
 import Layout from '../components/Layout';
 
 import useContentfulPage from '../hooks/useContentfulPage';
+
+const SimpleIcon = loadable<{
+  name: string;
+  size: number;
+  className?: string;
+  color?: string;
+}>(({ name }) =>
+  import(`@icons-pack/react-simple-icons/lib/components/${name}.js`),
+);
 
 const GET_SKILLS_CONTENTFUL_PAGE = graphql`
   query Skills {
@@ -88,36 +97,35 @@ const Skills: React.FC = () => {
                   .filter(
                     (skillNode) => skillNode.section?.id === sectionNode.id,
                   )
-                  .map((skillNode) => {
-                    const Icon = (SimpleIcons as {
-                      [key: string]: typeof SimpleIcons.Javascript;
-                    })[skillNode.icon ?? ''];
-
-                    return (
-                      <motion.div
-                        key={skillNode.id}
-                        className="flex flex-col-reverse items-center p-4 rounded"
-                        style={{
-                          backgroundColor: skillNode.hexColor ?? '#ffffff',
-                        }}
-                        variants={{
-                          show: {
-                            opacity: 1,
-                            y: 0,
-                          },
-                          hide: {
-                            opacity: 0,
-                            y: -20,
-                          },
-                        }}
-                      >
-                        <h2 className="text-center text-white">
-                          {skillNode.title}
-                        </h2>
-                        <Icon size={80} className="mb-2" color="#ffffff" />
-                      </motion.div>
-                    );
-                  })}
+                  .map((skillNode) => (
+                    <motion.div
+                      key={skillNode.id}
+                      className="flex flex-col-reverse items-center p-4 rounded"
+                      style={{
+                        backgroundColor: skillNode.hexColor ?? '#ffffff',
+                      }}
+                      variants={{
+                        show: {
+                          opacity: 1,
+                          y: 0,
+                        },
+                        hide: {
+                          opacity: 0,
+                          y: -20,
+                        },
+                      }}
+                    >
+                      <h2 className="text-center text-white">
+                        {skillNode.title}
+                      </h2>
+                      <SimpleIcon
+                        name={skillNode.icon ?? ''}
+                        size={80}
+                        className="mb-2"
+                        color="#ffffff"
+                      />
+                    </motion.div>
+                  ))}
               </motion.div>
             </section>
           ))}
