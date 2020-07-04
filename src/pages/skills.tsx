@@ -74,7 +74,7 @@ const Skills: React.FC = () => {
 
   return (
     <Layout pageTitle={contentfulPage.title ?? ''}>
-      <div className="space-y-16">
+      <div className="space-y-16" data-testid="page-skills">
         {section.nodes
           .filter((sectionNode) => sectionNode.page?.id === contentfulPage.id)
           .map((sectionNode) => (
@@ -92,6 +92,7 @@ const Skills: React.FC = () => {
                 }}
                 initial="hide"
                 animate="show"
+                data-testid="page-skills-grid"
               >
                 {skill.nodes
                   .filter(

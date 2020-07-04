@@ -8,7 +8,7 @@ type LogoProps = {
 };
 
 const Logo: React.FC<LogoProps> = ({ url }) => (
-  <Link to="/" className="block h-full">
+  <Link to="/" className="block h-full" data-testid="logo">
     <motion.img
       src={url}
       alt="logo"

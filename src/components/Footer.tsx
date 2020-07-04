@@ -68,7 +68,7 @@ const Footer: React.FC<FooterProps> = ({ className, made }) => {
     <footer className={classNames(className, 'md:flex md:justify-between')}>
       <div className="mb-2 md:mb-0">
         <div className="mb-2">{madeWithColor}</div>
-        <ul className="flex items-center space-x-2">
+        <ul className="flex items-center space-x-2" data-testid="footer-langs">
           <li className="text-sm">{intl.formatMessage({ id: 'language' })}:</li>
           {site?.siteMetadata?.langs?.langKeys?.map((langKey) => (
             <li key={langKey ?? ''}>
@@ -86,6 +86,7 @@ const Footer: React.FC<FooterProps> = ({ className, made }) => {
       <Link
         to={contentfulPage?.pathname ?? ''}
         className="inline-block hover:text-blue-500 transition-link"
+        data-testid="footer-legal-data"
       >
         <span className="mr-2">{contentfulPage?.title}</span>
         <FontAwesomeIcon icon={faInfoSquare} swapOpacity size="1x" />

@@ -33,7 +33,7 @@ const Nav: React.FC = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="flex items-center lg:relative">
+    <nav className="flex items-center lg:relative" data-testid="nav">
       <NavButton
         isMenuOpen={isMenuOpen}
         onClick={() => setMenuOpen(!isMenuOpen)}

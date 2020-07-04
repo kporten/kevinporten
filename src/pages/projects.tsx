@@ -79,7 +79,7 @@ const Projects: React.FC = () => {
 
   return (
     <Layout pageTitle={contentfulPage.title ?? ''}>
-      <div className="space-y-16">
+      <div className="space-y-16" data-testid="page-projects">
         {section.nodes
           .filter((sectionNode) => sectionNode.page?.id === contentfulPage.id)
           .map((sectionNode) => (
@@ -97,6 +97,7 @@ const Projects: React.FC = () => {
                 }}
                 initial="hide"
                 animate="show"
+                data-testid="page-projects-grid"
               >
                 {project.nodes
                   .filter(

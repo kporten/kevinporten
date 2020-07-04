@@ -51,7 +51,7 @@ const Legal: React.FC = () => {
 
   return (
     <Layout pageTitle={contentfulPage.title ?? ''}>
-      <div className="space-y-16">
+      <div className="space-y-16" data-testid="page-legal">
         {section.nodes
           .filter((sectionNode) => sectionNode.page?.id === contentfulPage.id)
           .map((sectionNode) => (
