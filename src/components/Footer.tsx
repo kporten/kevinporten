@@ -65,7 +65,10 @@ const Footer: React.FC<FooterProps> = ({ className, made }) => {
   });
 
   return (
-    <footer className={classNames(className, 'md:flex md:justify-between')}>
+    <footer
+      className={classNames(className, 'md:flex md:justify-between')}
+      data-testid="footer"
+    >
       <div className="mb-2 md:mb-0">
         <div className="mb-2">{madeWithColor}</div>
         <ul className="flex items-center space-x-2" data-testid="footer-langs">

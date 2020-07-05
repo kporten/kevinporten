@@ -28,6 +28,7 @@ const WordTransition: React.FC<WordTransitionProps> = ({
     initial="hide"
     animate="show"
     onAnimationComplete={onAnimationComplete}
+    data-testid="word-transition"
   >
     {word.split('').map((char, charIndex) => (
       <motion.span

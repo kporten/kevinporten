@@ -1,11 +1,7 @@
 {
   "language": "Language",
-  "languages": {
-    "de": "german",
-    "en": "english"
-  },
+  "languages.de": "german",
+  "languages.en": "english",
   "menu": "Menu",
-  "notfound": {
-    "back": "Back to the homepage"
-  }
+  "notfound.back": "Back to the homepage"
 }

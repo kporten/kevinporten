@@ -39,17 +39,23 @@ const GET_LAYOUT_CONTENTFUL = graphql`
 type LayoutProps = {
   pageTitle: string;
   isLanding?: boolean;
+  hasBackground?: boolean;
   children: React.ReactNode;
 };
 
-const Layout: React.FC<LayoutProps> = ({ pageTitle, isLanding, children }) => {
+const Layout: React.FC<LayoutProps> = ({
+  pageTitle,
+  isLanding = false,
+  hasBackground = true,
+  children,
+}) => {
   const { contentfulLayout } = useStaticQuery<LayoutQuery>(
     GET_LAYOUT_CONTENTFUL,
   );
 
   return (
     <div className="min-h-screen bg-black">
-      <Background className="absolute inset-0 z-0" />
+      {hasBackground && <Background className="absolute inset-0 z-0" />}
       <Seo
         title={`${contentfulLayout?.siteTitle} | ${pageTitle}`}
         description={contentfulLayout?.siteDescription ?? ''}

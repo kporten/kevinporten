@@ -26,5 +26,8 @@ module.exports = {
       }),
   ),
   StaticQuery: jest.fn(),
-  useStaticQuery: jest.fn(),
+  useStaticQuery: jest.fn(() => ({
+    site: null,
+    allContentfulPage: { nodes: [{ node_locale: 'en-US', title: 'title' }] },
+  })),
 };
