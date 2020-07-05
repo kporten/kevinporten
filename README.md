@@ -88,6 +88,7 @@ export FONTAWESOME_NPM_AUTH_TOKEN=... # https://fontawesome.com/how-to-use/on-th
 - [ESLint](https://eslint.org/)
 - [WebHint](https://webhint.io/)
 - [Prettier](https://prettier.io/)
+- [Snyk](https://snyk.io/)
 
 ### Tests
 
