@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { useIntl } from 'gatsby-plugin-intl';
 
 type SeoProps = {
   title: string;
@@ -11,6 +12,8 @@ type SeoProps = {
 };
 
 const Seo: React.FC<SeoProps> = ({ title, description, icon }) => {
+  const intl = useIntl();
+
   let favicon = icon.light;
 
   if (typeof window !== 'undefined') {
@@ -21,6 +24,7 @@ const Seo: React.FC<SeoProps> = ({ title, description, icon }) => {
 
   return (
     <Helmet>
+      <html lang={intl.locale} />
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="icon" href={favicon} type="image/png" />

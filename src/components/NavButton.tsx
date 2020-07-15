@@ -17,7 +17,6 @@ const NavButton: React.FC<NavButtonProps> = ({ isMenuOpen, onClick }) => {
     <button
       type="button"
       aria-label={intl.formatMessage({ id: 'menu' })}
-      aria-controls="navigation"
       onClick={onClick}
       className="relative w-8 h-8 text-white focus:outline-none lg:hover:text-blue-500 transition-link"
     >

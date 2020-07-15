@@ -1,11 +1,12 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import { Helmet, HelmetData } from 'react-helmet';
+
+import { renderWithIntl } from '../../jest/test-utils';
 
 import Seo from './Seo';
 
 it('sets helmet values', () => {
-  render(
+  renderWithIntl(
     <Seo
       title="title"
       description="desc"
@@ -13,17 +14,20 @@ it('sets helmet values', () => {
     />,
   );
 
-  const helmet: HelmetData & {
+  const helmet = Helmet.peek() as HelmetData & {
+    htmlAttributes?: { lang: string };
     metaTags?: [{ name: string; content: string }];
     linkTags?: [{ rel: string; href: string }];
-  } = Helmet.peek();
+  };
+
+  expect(helmet.htmlAttributes.lang).toBe('en-US');
 
   expect(helmet.title).toBe('title');
+
   expect(
     helmet?.metaTags?.find(({ name }) => name === 'description')?.content,
   ).toBe('desc');
 
-  expect(helmet.title).toBe('title');
   expect(helmet?.linkTags?.find(({ rel }) => rel === 'icon')?.href).toBe(
     'light',
   );
