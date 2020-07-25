@@ -101,7 +101,7 @@ const Skills: React.FC = () => {
                   .map((skillNode) => (
                     <motion.div
                       key={skillNode.id}
-                      className="flex flex-col-reverse items-center p-4 rounded"
+                      className="flex flex-col-reverse items-center justify-center p-4 h-48 rounded"
                       style={{
                         backgroundColor: skillNode.hexColor ?? '#ffffff',
                       }}
