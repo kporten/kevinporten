@@ -12,6 +12,7 @@ import SocialNetwork from '../components/SocialNetwork';
 import WordTransition from '../components/WordTransition';
 
 import useContentfulPage from '../hooks/useContentfulPage';
+import useDebounce from '../hooks/useDebounce';
 
 const GET_INDEX_CONTENTFUL_PAGE = graphql`
   query Index {
@@ -44,10 +45,10 @@ const Index: React.FC = () => {
   const { page } = useStaticQuery<IndexQuery>(GET_INDEX_CONTENTFUL_PAGE);
 
   const contentfulPage = useContentfulPage<typeof page.nodes[0]>(page.nodes);
-
   const section = contentfulPage?.section?.[0];
 
   const [tags, setTags] = useState(section?.tags as string[]);
+  const word = useDebounce(tags[0], 2000);
 
   if (!contentfulPage || !section) {
     return null;
@@ -74,7 +75,7 @@ const Index: React.FC = () => {
             <span className="inline-block">{section.title}&nbsp;</span>
             <WordTransition
               className="text-blue-500"
-              word={tags?.[0] ?? ''}
+              word={word}
               onAnimationComplete={handleAnimationComplete}
             />
           </h1>
