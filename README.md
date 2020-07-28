@@ -1,24 +1,24 @@
 # Kevin Porten
 
 ![license](https://img.shields.io/github/license/kporten/kevinporten)
-
 ![tag](https://img.shields.io/github/v/tag/kporten/kevinporten)
-
 ![last-commit](https://img.shields.io/github/last-commit/kporten/kevinporten)
-
 ![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)
-
 ![ci](https://github.com/kporten/kevinporten/workflows/CI/badge.svg?branch=master&event=push)
 
 My personal homepage. Feel free to copy and modify the code, but please don't use my name and picture in your copy :)
 
-## Requirements
-
-[Yarn 1 (Classic)](https://classic.yarnpkg.com/lang/en/)
+---
 
 ## Getting Started
 
 Copy the `.env.example` file and rename the copy to `.env.development`. Then change the variable values in the file.
+
+You have to export an environment variable to install the FontAwesome packages. The best place is your .zshrc, .bashrc, .bash_profile or in a similar file.
+
+```bash
+export FONTAWESOME_NPM_AUTH_TOKEN=... # https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro
+```
 
 Now you can start with development...
 
@@ -27,7 +27,7 @@ yarn install
 yarn start
 ```
 
-## Development Scripts
+## Scripts
 
 ```bash
 yarn start # start gatsby development server
@@ -44,18 +44,9 @@ yarn e2e:run # run cypress e2e tests
 yarn commit # commitizen friendly commit helper
 ```
 
-## CI Scripts
+## GitHub Actions
 
-```bash
-yarn test:ci # run jest tests in ci mode
-yarn e2e:ci # run cypress e2e tests in ci mode
-```
-
-> This project contains a GitHub CI workflow that runs on push (except for tags) and pull request events.
-
-## Secrets
-
-You will need to define the following secrets to work with this project.
+You will need to define the following secrets to use this project with the current workflow configuration.
 
 ```ini
 # `.env.development` file & GitHub > Repository > Settings > Secrets
@@ -67,10 +58,29 @@ FONTAWESOME_NPM_AUTH_TOKEN=... # https://fontawesome.com/how-to-use/on-the-web/s
 SNYK_TOKEN=... # https://support.snyk.io/hc/en-us/articles/360004037537-Authentication-for-third-party-tools
 ```
 
-```bash
-# the best place is your .zshrc, .bashrc, .bash_profile or in a similar file
-export FONTAWESOME_NPM_AUTH_TOKEN=... # https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro
-```
+### Jobs
+
+- test (run jest tests: `yarn test:ci`)
+- e2e (run cypress tests: `yarn e2e:ci`)
+- security (check for vulnerabilities)
+
+## Publish
+
+On **commit** (git), the following commands are executed...
+
+- Hook `pre-commit`
+  - `yarn type-check`
+  - `yarn lint`
+  - `yarn hint`
+- Hook `commit-msg`
+  - `commitlint`
+
+On **push** (git), the following commands are executed...
+
+- Hook `pre-push`
+  - `yarn test:ci`
+
+---
 
 ## Environment
 
