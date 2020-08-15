@@ -106,7 +106,7 @@ const Projects: React.FC = () => {
                   .map((projectNode) => (
                     <motion.div
                       key={projectNode.id}
-                      className="border border-gray-500 p-4 rounded flex flex-col"
+                      className="border border-gray-500 p-4 rounded flex flex-col shadow-md"
                       variants={{
                         show: {
                           opacity: 1,
@@ -126,14 +126,28 @@ const Projects: React.FC = () => {
                         />
                       )}
                       <div className="flex justify-between">
-                        <h2 className="text-xl">{projectNode.title}</h2>
+                        <h2 className="text-xl">
+                          {projectNode.url ? (
+                            <a
+                              href={projectNode.url}
+                              aria-label={projectNode.url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-block hover:text-gray-700 transition-link"
+                            >
+                              {projectNode.title}
+                            </a>
+                          ) : (
+                            projectNode.title
+                          )}
+                        </h2>
                         {projectNode.url && (
                           <a
                             href={projectNode.url}
                             aria-label={projectNode.url}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-block hover:text-gray-500 transition-link"
+                            className="inline-block hover:text-gray-700 transition-link"
                           >
                             <FontAwesomeIcon icon={faGithubSquare} size="2x" />
                           </a>
