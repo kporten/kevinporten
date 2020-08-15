@@ -6,7 +6,7 @@ module.exports = {
     },
     extend: {
       boxShadow: {
-        colored: '0 0 6px var(--box-shadow-color)',
+        colored: '0 0 3px var(--box-shadow-color)',
       },
       transitionProperty: {
         visibility: 'visibility, opacity',

@@ -106,7 +106,7 @@ const Projects: React.FC = () => {
                   .map((projectNode) => (
                     <motion.div
                       key={projectNode.id}
-                      className="border border-gray-500 p-4 rounded flex flex-col shadow-md"
+                      className="p-4 rounded flex flex-col shadow"
                       variants={{
                         show: {
                           opacity: 1,
