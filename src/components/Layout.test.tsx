@@ -1,35 +1,35 @@
 import React from 'react';
 
-import { renderWithIntl } from '../../jest/test-utils';
+import { renderWithIntl, screen } from '../../jest/test-utils';
 
 import Layout from './Layout';
 
 it('renders with page title', () => {
-  const { getByText } = renderWithIntl(
+  renderWithIntl(
     <Layout pageTitle="pageTitle" hasBackground={false}>
       layout
     </Layout>,
   );
 
-  expect(getByText('layout')).toBeVisible();
+  expect(screen.getByText('layout')).toBeVisible();
 });
 
 it('renders with landing page layout', () => {
-  const { getByRole } = renderWithIntl(
+  renderWithIntl(
     <Layout pageTitle="pageTitle" isLanding hasBackground={false}>
       layout
     </Layout>,
   );
 
-  expect(getByRole('main')).not.toHaveClass('bg-white');
+  expect(screen.getByRole('main')).not.toHaveClass('bg-white');
 });
 
 it('renders with sub page layout', () => {
-  const { getByRole } = renderWithIntl(
+  renderWithIntl(
     <Layout pageTitle="pageTitle" hasBackground={false}>
       layout
     </Layout>,
   );
 
-  expect(getByRole('main')).toHaveClass('bg-white');
+  expect(screen.getByRole('main')).toHaveClass('bg-white');
 });

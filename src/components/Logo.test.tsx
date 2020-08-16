@@ -1,20 +1,20 @@
 import React from 'react';
 
-import { renderWithIntl, waitFor } from '../../jest/test-utils';
+import { renderWithIntl, screen, waitFor } from '../../jest/test-utils';
 import Logo from './Logo';
 
 it('renders with url as image source', () => {
-  const { getByRole } = renderWithIntl(<Logo url="test" />);
+  renderWithIntl(<Logo url="test" />);
 
-  expect(getByRole('img')).toHaveAttribute('src', 'test');
+  expect(screen.getByRole('img')).toHaveAttribute('src', 'test');
 });
 
 it('shows an animation', async () => {
-  const { getByRole } = renderWithIntl(<Logo url="test" />);
+  renderWithIntl(<Logo url="test" />);
 
-  expect(getByRole('img')).toHaveStyle({ opacity: 0 });
+  expect(screen.getByRole('img')).toHaveStyle({ opacity: 0 });
 
   await waitFor(() => {
-    expect(getByRole('img')).toHaveStyle({ opacity: 1 });
+    expect(screen.getByRole('img')).toHaveStyle({ opacity: 1 });
   });
 });
