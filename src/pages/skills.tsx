@@ -101,9 +101,10 @@ const Skills: React.FC = () => {
                   .map((skillNode) => (
                     <motion.div
                       key={skillNode.id}
-                      className="flex flex-col-reverse items-center justify-center p-4 h-48 rounded bg-gray-700"
+                      className="flex flex-col-reverse items-center justify-center p-4 h-48 rounded shadow-xl text-gray-700"
                       whileHover={{
-                        backgroundColor: skillNode.hexColor ?? '#ffffff',
+                        backgroundColor: skillNode.hexColor ?? '#000000',
+                        color: '#ffffff',
                         scale: 1.1,
                       }}
                       variants={{
@@ -117,14 +118,11 @@ const Skills: React.FC = () => {
                         },
                       }}
                     >
-                      <h2 className="text-center text-white">
-                        {skillNode.title}
-                      </h2>
+                      <h2 className="text-center">{skillNode.title}</h2>
                       <SimpleIcon
                         name={skillNode.icon ?? ''}
                         size={80}
                         className="mb-2"
-                        color="#ffffff"
                       />
                     </motion.div>
                   ))}

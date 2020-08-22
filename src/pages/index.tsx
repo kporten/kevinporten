@@ -100,7 +100,7 @@ const Index: React.FC = () => {
           <Img
             fixed={section.titleImage?.fixed as FixedObject}
             alt={section.titleImage?.title ?? ''}
-            className="rounded-full"
+            className="rounded-full shadow-xl"
           />
         </div>
       </section>

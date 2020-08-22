@@ -42,7 +42,7 @@ const Nav: React.FC = () => {
         {isMenuOpen && (
           <motion.ul
             key="menuList"
-            className="lg:flex absolute inset-0 lg:left-auto lg:bottom-auto z-20 mt-32 lg:mt-0 lg:mr-12 bg-black lg:bg-transparent"
+            className="lg:flex absolute inset-0 lg:left-auto lg:bottom-auto z-20 mt-32 lg:mt-0 lg:mr-12 lg:bg-transparent bg-gray-900"
             variants={{
               open: {
                 transition: {
