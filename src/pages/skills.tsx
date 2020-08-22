@@ -101,13 +101,11 @@ const Skills: React.FC = () => {
                   .map((skillNode) => (
                     <motion.div
                       key={skillNode.id}
-                      className="flex flex-col-reverse items-center justify-center p-4 h-48 rounded shadow-colored"
-                      style={
-                        {
-                          backgroundColor: skillNode.hexColor ?? '#ffffff',
-                          '--box-shadow-color': skillNode.hexColor ?? '#ffffff',
-                        } as React.CSSProperties
-                      }
+                      className="flex flex-col-reverse items-center justify-center p-4 h-48 rounded bg-gray-700"
+                      whileHover={{
+                        backgroundColor: skillNode.hexColor ?? '#ffffff',
+                        scale: 1.1,
+                      }}
                       variants={{
                         show: {
                           opacity: 1,

@@ -106,7 +106,7 @@ const Projects: React.FC = () => {
                   .map((projectNode) => (
                     <motion.div
                       key={projectNode.id}
-                      className="p-4 rounded flex flex-col shadow"
+                      className="p-4 rounded flex flex-col shadow-xl"
                       variants={{
                         show: {
                           opacity: 1,
@@ -118,13 +118,6 @@ const Projects: React.FC = () => {
                         },
                       }}
                     >
-                      {projectNode.preview && (
-                        <Img
-                          fluid={projectNode.preview.fluid as FluidObject}
-                          alt={projectNode.preview.title ?? ''}
-                          className="mb-2 rounded"
-                        />
-                      )}
                       <div className="flex justify-between">
                         <h2 className="text-xl">
                           {projectNode.url ? (
@@ -133,7 +126,7 @@ const Projects: React.FC = () => {
                               aria-label={projectNode.url}
                               target="_blank"
                               rel="noreferrer"
-                              className="inline-block hover:text-gray-700 transition-link"
+                              className="inline-block"
                             >
                               {projectNode.title}
                             </a>
@@ -147,12 +140,19 @@ const Projects: React.FC = () => {
                             aria-label={projectNode.url}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-block hover:text-gray-700 transition-link"
+                            className="inline-block hover:text-gray-600 transition-link"
                           >
                             <FontAwesomeIcon icon={faGithubSquare} size="2x" />
                           </a>
                         )}
                       </div>
+                      {projectNode.preview && (
+                        <Img
+                          fluid={projectNode.preview.fluid as FluidObject}
+                          alt={projectNode.preview.title ?? ''}
+                          className="mt-2 rounded"
+                        />
+                      )}
                       <div className="flex-grow mt-2 content">
                         {documentToReactComponents(
                           projectNode.description?.json,
@@ -162,7 +162,7 @@ const Projects: React.FC = () => {
                         {projectNode.languages?.map((language) => (
                           <Tag
                             key={`${projectNode.id}_${language}`}
-                            className="mt-2 mr-2"
+                            className="mr-2"
                           >
                             {language}
                           </Tag>

@@ -54,7 +54,7 @@ const Layout: React.FC<LayoutProps> = ({
   );
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-gray-900">
       {hasBackground && <Background className="absolute inset-0 z-0" />}
       <Seo
         title={`${contentfulLayout?.siteTitle} | ${pageTitle}`}

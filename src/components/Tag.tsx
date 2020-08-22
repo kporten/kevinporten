@@ -11,7 +11,7 @@ const Tag: React.FC<TagProps> = ({ className, children }) => (
   <span
     className={classNames(
       className,
-      'inline-block bg-gray-400 px-2 py-1 rounded text-sm',
+      'inline-block bg-gray-700 text-white px-2 py-1 rounded text-sm',
     )}
   >
     {children}

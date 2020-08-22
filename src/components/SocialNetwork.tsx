@@ -21,16 +21,16 @@ const SocialNetwork: React.FC<SocialNetworkProps> = ({ link }) => {
 
   if (link.includes('linkedin')) {
     icon = faLinkedin;
-    color = 'hover:text-blue-700';
+    color = 'hover:text-blue-600';
   } else if (link.includes('github')) {
     icon = faGithubSquare;
-    color = 'hover:text-gray-500';
+    color = 'hover:text-gray-600';
   } else if (link.includes('twitter')) {
     icon = faTwitterSquare;
     color = 'hover:text-blue-500';
   } else if (link.includes('xing')) {
     icon = faXingSquare;
-    color = 'hover:text-teal-700';
+    color = 'hover:text-teal-600';
   }
 
   if (icon) {
