@@ -158,11 +158,11 @@ const Projects: React.FC = () => {
                           projectNode.description?.json,
                         )}
                       </div>
-                      <div className="mt-2">
+                      <div>
                         {projectNode.languages?.map((language) => (
                           <Tag
                             key={`${projectNode.id}_${language}`}
-                            className="mr-2"
+                            className="mt-2 mr-2"
                           >
                             {language}
                           </Tag>
