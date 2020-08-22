@@ -55,6 +55,8 @@ CONTENTFUL_ACCESS_TOKEN=... # https://www.contentful.com/developers/docs/referen
 CONTENTFUL_SPACE_ID=... # https://www.contentful.com/developers/docs/references/authentication/
 
 # GitHub > Repository > Settings > Secrets
+CYPRESS_PROJECT_ID=... # https://docs.cypress.io/guides/dashboard/projects.html#Setup
+CYPRESS_RECORD_KEY=... # https://docs.cypress.io/guides/dashboard/projects.html#Setup
 FONTAWESOME_NPM_AUTH_TOKEN=... # https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro
 SNYK_TOKEN=... # https://support.snyk.io/hc/en-us/articles/360004037537-Authentication-for-third-party-tools
 ```
