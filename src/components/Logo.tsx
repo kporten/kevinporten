@@ -14,7 +14,7 @@ const Logo: React.FC<LogoProps> = ({ url }) => (
       alt="logo"
       className="h-full"
       initial={{ opacity: 0, translateY: '-100%' }}
-      animate={{ opacity: 1, translateY: 0 }}
+      animate={{ opacity: 1, translateY: '0%' }}
       transition={{ duration: 0.4 }}
     />
   </Link>
