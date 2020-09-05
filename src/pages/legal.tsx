@@ -3,7 +3,7 @@ import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import type { LegalQuery } from '../../types/graphql';
+import type { LegalQuery } from '../../typings/graphql';
 
 import Layout from '../components/Layout';
 

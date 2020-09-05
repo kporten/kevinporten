@@ -4,7 +4,7 @@ import loadable from '@loadable/component';
 import { motion } from 'framer-motion';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import type { SkillsQuery } from '../../types/graphql';
+import type { SkillsQuery } from '../../typings/graphql';
 
 import Layout from '../components/Layout';
 

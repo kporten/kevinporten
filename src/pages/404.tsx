@@ -3,7 +3,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useIntl, Link } from 'gatsby-plugin-intl';
 
-import type { NotFoundQuery } from '../../types/graphql';
+import type { NotFoundQuery } from '../../typings/graphql';
 
 import Layout from '../components/Layout';
 import UndrawTaken from '../assets/UndrawTaken.svg';

@@ -8,7 +8,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import type { FluidObject } from 'gatsby-image';
-import type { ProjectsQuery } from '../../types/graphql';
+import type { ProjectsQuery } from '../../typings/graphql';
 
 import Layout from '../components/Layout';
 import Tag from '../components/Tag';

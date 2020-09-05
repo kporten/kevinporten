@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import type { FixedObject } from 'gatsby-image';
-import type { IndexQuery } from '../../types/graphql';
+import type { IndexQuery } from '../../typings/graphql';
 
 import Layout from '../components/Layout';
 import SocialNetwork from '../components/SocialNetwork';

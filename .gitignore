@@ -15,7 +15,7 @@
 /public
 
 # generated
-/types/graphql.ts
+/typings/graphql.ts
 
 # misc
 .DS_Store

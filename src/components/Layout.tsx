@@ -3,7 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import type { LayoutQuery } from '../../types/graphql';
+import type { LayoutQuery } from '../../typings/graphql';
 
 import Background from './Background';
 import Container from './Container';

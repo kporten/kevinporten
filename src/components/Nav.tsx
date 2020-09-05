@@ -6,7 +6,7 @@ import { useIntl, Link } from 'gatsby-plugin-intl';
 
 import NavButton from './NavButton';
 
-import type { NavQuery } from '../../types/graphql';
+import type { NavQuery } from '../../typings/graphql';
 
 const query = graphql`
   query Nav {
