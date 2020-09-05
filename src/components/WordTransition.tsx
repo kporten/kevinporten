@@ -1,7 +1,6 @@
-import React from 'react';
-
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
+import React from 'react';
 
 type WordTransitionProps = {
   className?: string;

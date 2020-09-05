@@ -1,6 +1,6 @@
-import React from 'react';
 import { render, RenderOptions, RenderResult } from '@testing-library/react';
 import { IntlContextProvider, IntlProvider } from 'gatsby-plugin-intl';
+import React from 'react';
 
 import en from '../src/i18n/en.json';
 

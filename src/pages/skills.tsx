@@ -1,22 +1,22 @@
-import React from 'react';
-
 import loadable from '@loadable/component';
 import { motion } from 'framer-motion';
 import { useStaticQuery, graphql } from 'gatsby';
+import React from 'react';
 
 import type { SkillsQuery } from '../../typings/graphql';
 
 import Layout from '../components/Layout';
 
-import useContentfulPage from '../hooks/useContentfulPage';
+import { useContentfulPage } from '../hooks';
 
 const SimpleIcon = loadable<{
   name: string;
   size: number;
   className?: string;
   color?: string;
-}>(({ name }) =>
-  import(`@icons-pack/react-simple-icons/lib/components/${name}.js`),
+}>(
+  ({ name }) =>
+    import(`@icons-pack/react-simple-icons/lib/components/${name}.js`),
 );
 
 const GET_SKILLS_CONTENTFUL_PAGE = graphql`

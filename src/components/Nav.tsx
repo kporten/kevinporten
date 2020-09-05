@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-
 import { AnimatePresence, motion } from 'framer-motion';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useIntl, Link } from 'gatsby-plugin-intl';
-
-import NavButton from './NavButton';
+import React, { useState } from 'react';
 
 import type { NavQuery } from '../../typings/graphql';
+
+import NavButton from './NavButton';
 
 const query = graphql`
   query Nav {

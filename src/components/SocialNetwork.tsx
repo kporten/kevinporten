@@ -1,4 +1,4 @@
-import React from 'react';
+import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 
 import {
   faLinkedin,
@@ -8,8 +8,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
-
-import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import React from 'react';
 
 type SocialNetworkProps = {
   link: string;

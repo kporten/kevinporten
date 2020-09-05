@@ -1,6 +1,6 @@
+import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useIntl } from 'gatsby-plugin-intl';
 
 type SeoProps = {
   title: string;

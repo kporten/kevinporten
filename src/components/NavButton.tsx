@@ -1,9 +1,8 @@
-import React from 'react';
-
 import { faBars, faTimes } from '@fortawesome/pro-duotone-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useIntl } from 'gatsby-plugin-intl';
+import React from 'react';
 
 type NavButtonProps = {
   isMenuOpen: boolean;

@@ -1,7 +1,6 @@
-import React from 'react';
-
 import classNames from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
+import React from 'react';
 
 import type { LayoutQuery } from '../../typings/graphql';
 

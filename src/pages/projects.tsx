@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FluidObject } from 'gatsby-image';
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
@@ -6,14 +6,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import React from 'react';
 
-import type { FluidObject } from 'gatsby-image';
 import type { ProjectsQuery } from '../../typings/graphql';
 
 import Layout from '../components/Layout';
 import Tag from '../components/Tag';
 
-import useContentfulPage from '../hooks/useContentfulPage';
+import { useContentfulPage } from '../hooks';
 
 const GET_PROJECTS_CONTENTFUL_PAGE = graphql`
   query Projects {
