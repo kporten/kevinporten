@@ -85,10 +85,9 @@ const Skills: React.FC = () => {
                 variants={{
                   show: {
                     transition: {
-                      staggerChildren: 0.1,
+                      staggerChildren: 0.25,
                     },
                   },
-                  hide: {},
                 }}
                 initial="hide"
                 animate="show"
@@ -101,7 +100,7 @@ const Skills: React.FC = () => {
                   .map((skillNode) => (
                     <motion.div
                       key={skillNode.id}
-                      className="flex flex-col-reverse items-center justify-center p-4 h-48 rounded shadow-xl text-gray-700"
+                      className="flex flex-col-reverse items-center justify-center p-4 h-48 rounded shadow-xl bg-white"
                       whileHover={{
                         backgroundColor: skillNode.hexColor ?? '#000000',
                         color: '#ffffff',
@@ -111,10 +110,12 @@ const Skills: React.FC = () => {
                         show: {
                           opacity: 1,
                           y: 0,
+                          color: skillNode.hexColor ?? '#000000',
                         },
                         hide: {
                           opacity: 0,
                           y: -20,
+                          color: '#ffffff',
                         },
                       }}
                     >

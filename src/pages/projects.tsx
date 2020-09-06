@@ -90,10 +90,9 @@ const Projects: React.FC = () => {
                 variants={{
                   show: {
                     transition: {
-                      staggerChildren: 0.1,
+                      staggerChildren: 0.25,
                     },
                   },
-                  hide: {},
                 }}
                 initial="hide"
                 animate="show"
@@ -106,7 +105,7 @@ const Projects: React.FC = () => {
                   .map((projectNode) => (
                     <motion.div
                       key={projectNode.id}
-                      className="p-4 rounded flex flex-col shadow-xl"
+                      className="p-4 rounded flex flex-col shadow-xl bg-white"
                       variants={{
                         show: {
                           opacity: 1,
