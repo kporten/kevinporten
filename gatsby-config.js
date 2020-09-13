@@ -18,7 +18,7 @@ module.exports = {
         start_url: '/',
         name: 'Kevin Porten',
         short_name: 'KP',
-        icon: './src/assets/IconTransparentLight.png',
+        icon: './src/assets/IconLight.png',
         include_favicon: false,
         background_color: '#1a202c',
         theme_color: '#1a202c',
