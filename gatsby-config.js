@@ -11,6 +11,20 @@ module.exports = {
     langs,
   },
   plugins: [
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        start_url: '/',
+        name: 'Kevin Porten',
+        short_name: 'KP',
+        icon: './src/assets/IconTransparentLight.png',
+        include_favicon: false,
+        background_color: '#1a202c',
+        theme_color: '#1a202c',
+        display: 'standalone',
+      },
+    },
     // https://www.gatsbyjs.org/packages/gatsby-plugin-graphql-codegen/
     {
       resolve: 'gatsby-plugin-graphql-codegen',
