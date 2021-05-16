@@ -8,6 +8,8 @@ const Profile: React.FC = () => (
         src="/profile.png"
         alt="Kevin Porten"
         className="rounded-full filter grayscale lg:group-hover:grayscale-0 lg:transition lg:duration-500"
+        width="100%"
+        height="100%"
       />
     </div>
   </div>

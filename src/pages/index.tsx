@@ -25,18 +25,21 @@ const Index: React.FC = () => (
       </LinkExternal>
       <span className="flex space-x-5 text-2xl">
         <LinkExternal href="https://github.com/kporten">
+          <span className="sr-only">GitHub</span>
           <FontAwesomeIcon icon={faGithub} />
         </LinkExternal>
         <LinkExternal
           href="https://twitter.com/KevinPorten"
           className="hover:text-blue-400 dark:hover:text-twitter"
         >
+          <span className="sr-only">Twitter</span>
           <FontAwesomeIcon icon={faTwitter} />
         </LinkExternal>
         <LinkExternal
           href="https://www.xing.com/profile/Kevin_Porten/cv"
           className="hover:text-green-600 dark:hover:text-xing"
         >
+          <span className="sr-only">Xing</span>
           <FontAwesomeIcon icon={faXing} />
         </LinkExternal>
       </span>

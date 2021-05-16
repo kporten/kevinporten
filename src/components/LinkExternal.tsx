@@ -13,6 +13,7 @@ const LinkExternal: React.FC<LinkExternalProps> = ({
   <a
     href={href}
     target={href.includes('http') ? '_blank' : undefined}
+    rel="noopener"
     className={`group relative hover:text-black dark:hover:text-trueGray-300 transition-colors duration-400 ${className}`}
   >
     {children ?? href}
