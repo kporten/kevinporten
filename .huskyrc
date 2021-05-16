@@ -1,7 +1,0 @@
-{
-  "hooks": {
-    "pre-commit": "yarn type-check && yarn lint && yarn hint",
-    "pre-push": "yarn test:ci",
-    "commit-msg": "commitlint --env HUSKY_GIT_PARAMS"
-  }
-}

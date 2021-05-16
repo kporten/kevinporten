@@ -1,5 +1,12 @@
 {
-  "baseUrl": "http://localhost:8000",
-  "integrationFolder": "cypress/e2e",
-  "projectId": "jjz36f"
+  "baseUrl": "http://localhost:3000",
+  "component": {
+    "componentFolder": "src",
+    "screenshotOnRunFailure": false,
+    "testFiles": "**/*.test.{ts,tsx}",
+    "video": false
+  },
+  "fixturesFolder": false,
+  "pluginsFile": "cypress/plugins.js",
+  "supportFile": "cypress/support.js"
 }
