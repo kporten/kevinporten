@@ -1,24 +1,18 @@
-# dependencies
-/node_modules
-
-# testing
-/coverage
-/cypress/screenshots
-/cypress/videos
-/hint-report
-
-# development
-/.cache
+# Logs
+cypress/screenshots/
+cypress/videos/
 *.log
 
-# production
-/public
+# Dependencies
+node_modules/
 
-# generated
-/typings/graphql.ts
+# Environment variables
+.env
 
-# misc
+# Build
+.netlify/
+.next/
+out/
+
+# Other
 .DS_Store
-.env*
-!.env.example
-.netlify

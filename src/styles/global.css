@@ -1,41 +1,9 @@
-/* tailwind 1/2 */
 @tailwind base;
-
-/* base */
-body {
-  @apply font-body text-base;
-}
-
-h1 {
-  @apply text-center text-xl uppercase mb-6;
-}
-
-/* content(ful) */
-.content a {
-  @apply text-gray-500 transition-colors duration-200;
-}
-
-.content a:hover {
-  @apply text-gray-600;
-}
-
-.content p {
-  @apply break-words mb-4;
-}
-
-.content h2,
-.content h3,
-.content h4,
-.content h5,
-.content h6 {
-  @apply uppercase mb-2;
-}
-
-/* utilities */
-.transition-link {
-  @apply transition-colors duration-200;
-}
-
-/* tailwind 2/2 */
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-montserrat bg-white text-trueGray-700 dark:bg-black dark:text-trueGray-400;
+  }
+}
