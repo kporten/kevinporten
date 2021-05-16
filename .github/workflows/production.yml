@@ -27,8 +27,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           install: false
-          record: false
-          command: yarn test
+          command: yarn test --record false
   security:
     runs-on: ubuntu-latest
     steps:
