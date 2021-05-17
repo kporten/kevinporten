@@ -8,5 +8,7 @@
   },
   "fixturesFolder": false,
   "pluginsFile": "cypress/plugins.js",
-  "supportFile": "cypress/support.js"
+  "supportFile": "cypress/support.js",
+  "viewportHeight": 900,
+  "viewportWidth": 1440
 }
