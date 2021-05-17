@@ -10,7 +10,7 @@ import Profile from '../components/Profile';
 import Title from '../components/Title';
 
 const Index: React.FC = () => (
-  <main>
+  <main className="py-16 px-4">
     <div className="flex flex-col items-center space-y-12 lg:flex-row lg:space-y-0 lg:space-x-10">
       <Profile />
       <Title primary="Kevin Porten" secondary="Web Developer" />

@@ -17,7 +17,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => (
         href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
       />
     </Head>
-    <div className="min-h-screen min-h-fill-available flex justify-center items-center py-16 px-4">
+    <div className="min-h-screen min-h-fill-available flex justify-center items-center">
       <Component {...pageProps} />
     </div>
   </>
