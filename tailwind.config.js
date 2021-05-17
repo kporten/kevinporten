@@ -31,6 +31,9 @@ module.exports = {
       fontFamily: {
         montserrat: ['Montserrat'],
       },
+      minHeight: {
+        'fill-available': '-webkit-fill-available',
+      },
     },
   },
 };

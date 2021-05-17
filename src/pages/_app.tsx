@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import '../styles/global.css';
+import 'tailwindcss/tailwind.css';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => (
   <>
@@ -17,7 +17,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => (
         href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
       />
     </Head>
-    <div className="h-screen flex justify-center items-center px-4">
+    <div className="min-h-screen min-h-fill-available flex justify-center items-center py-16 px-4">
       <Component {...pageProps} />
     </div>
   </>
