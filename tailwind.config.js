@@ -18,7 +18,7 @@ module.exports = {
       backgroundImage: (theme) => ({
         'conic-gradient': conicGradient(theme, 'from 300deg', [
           'cyan.500',
-          'lightBlue.500',
+          'sky.500',
           'blue.500',
           'cyan.500',
         ]),

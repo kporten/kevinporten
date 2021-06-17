@@ -1,9 +1,10 @@
+import Page from '../components/Page';
 import Title from '../components/Title';
 
 const NotFound: React.FC = () => (
-  <main className="py-16 px-4">
+  <Page>
     <Title primary="404" secondary="Not found" />
-  </main>
+  </Page>
 );
 
 export default NotFound;

@@ -3,7 +3,7 @@ import { mount } from '@cypress/react';
 
 import Title from './Title';
 
-it('should render http link', () => {
+it('should render title parts', () => {
   mount(<Title primary="Kevin Porten" secondary="Web Developer" />);
 
   cy.findByText('Kevin Porten').should('be.visible');
